@@ -1,0 +1,68 @@
+.header {
+    grid-column: full-start/col-end 6;
+    background-image: linear-gradient(
+            rgba($color-secondary, 0.85),
+            rgba($color-secondary, 0.85)
+        ),
+        url("../img/hero.jpeg");
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 8rem;
+    h1 {
+        margin: -5rem 0;
+    }
+    &__logo {
+        height: 3rem;
+        width: auto;
+        align-self: center;
+    }
+    button {
+        font-weight: 500;
+    }
+    @media only screen and (max-width: $bp-med) {
+        grid-column: 1/-1;
+    }
+}
+.seenon {
+    transform: translateX(-3.5rem);
+    @media only screen and (max-width: $bp-large) {
+        align-self: center;
+    }
+    &__text {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        color: $color-grey-light-2;
+        font-size: 1.9rem;
+        margin-bottom: 3rem;
+        font-family: $font-display;
+        grid-column: 2/3;
+        align-items: center;
+        grid-gap: 1rem;
+
+        &::after,
+        &::before {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+        }
+    }
+    &__logos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        justify-items: center;
+        @media only screen and (max-width: $bp-med) {
+            grid-row-gap: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        img {
+            max-height: 2.5rem;
+            max-width: 100%;
+            opacity: 0.6;
+        }
+    }
+}
